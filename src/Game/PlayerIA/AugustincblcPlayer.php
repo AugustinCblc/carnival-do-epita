@@ -30,7 +30,7 @@ class AugustincblcPlayer extends Player
             else
                 return parent::scissorsChoice();
         }
-        if ($mylast != $opplast)
+        /*if ($mylast != $opplast)
         {
             if ($opplast == $this->rockChoice())
                 return parent::paperChoice();
@@ -38,7 +38,7 @@ class AugustincblcPlayer extends Player
                 return parent::scissorsChoice();
             else
                 return parent::rockChoice();
-        }
+        }*/
         if ($opplast == $this->rockChoice())
             return parent::paperChoice();
         if ($opplast == $this->paperChoice())
