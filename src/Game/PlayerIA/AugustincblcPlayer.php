@@ -19,13 +19,19 @@ class AugustincblcPlayer extends Player
     {
         $mylast = $this->result->getLastChoiceFor($this->mySide);
         $opplast = $this->result->getLastChoiceFor($this->opponentSide);
-
         $score = $this->result->getLastScoreFor($this->mySide);
+
+        // -------------------------------------    -----------------------------------------------------
+        // If I win, I keep my last choice
+        // -------------------------------------    -----------------------------------------------------
         if ($score > 1)
         {
             return $mylast;
         }
 
+        // -------------------------------------    -----------------------------------------------------
+        // If I loose, I choose the solution with which I should have won
+        // -------------------------------------    -----------------------------------------------------
         if ($opplast == $this->rockChoice())
             return parent::paperChoice();
         if ($opplast == $this->paperChoice())
@@ -55,6 +61,5 @@ class AugustincblcPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
-        return parent::paperChoice();            
   }
 };
