@@ -20,25 +20,12 @@ class AugustincblcPlayer extends Player
         $mylast = $this->result->getLastChoiceFor($this->mySide);
         $opplast = $this->result->getLastChoiceFor($this->opponentSide);
 
-        $win = $this->result->getLastScoreFor($this->mySide);
-        if ($win > 0)
+        $score = $this->result->getLastScoreFor($this->mySide);
+        if ($score > 1)
         {
-            if ($mylast == $this->rockChoice())
-                return parent::rockChoice();
-            if ($mylast == $this->paperChoice())
-                return parent::paperChoice();
-            else
-                return parent::scissorsChoice();
+            return $mylast;
         }
-        /*if ($mylast != $opplast)
-        {
-            if ($opplast == $this->rockChoice())
-                return parent::paperChoice();
-            if ($opplast == $this->paperChoice())
-                return parent::scissorsChoice();
-            else
-                return parent::rockChoice();
-        }*/
+
         if ($opplast == $this->rockChoice())
             return parent::paperChoice();
         if ($opplast == $this->paperChoice())
