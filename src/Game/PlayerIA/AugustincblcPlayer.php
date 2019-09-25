@@ -21,9 +21,9 @@ class AugustincblcPlayer extends Player
         $opplast = $this->result->getLastChoiceFor($this->opponentSide);
         if ($mylast != $opplast)
         {
-            if ($mylast == $this->rockChoice())
+            if ($opplast == $this->rockChoice())
                 return parent::rockChoice();
-            if ($mylast == $this->paperChoice())
+            if ($opplast == $this->paperChoice())
                 return parent::paperChoice();
             else
                 return parent::scissorsChoice();
