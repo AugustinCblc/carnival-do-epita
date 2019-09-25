@@ -17,6 +17,11 @@ class AugustincblcPlayer extends Player
 
     public function getChoice()
     {
+        // -------------------------------------    -----------------------------------------------------
+        // I start with a random forest but the other students' solutions weren't advanced enough to play against me.
+        // So I preferred to do more basic.
+        // -------------------------------------    -----------------------------------------------------
+
         $mylast = $this->result->getLastChoiceFor($this->mySide);
         $opplast = $this->result->getLastChoiceFor($this->opponentSide);
         $score = $this->result->getLastScoreFor($this->mySide);
@@ -39,6 +44,9 @@ class AugustincblcPlayer extends Player
             return parent::scissorsChoice();
         else
             return parent::rockChoice();
+
+
+        
         // -------------------------------------    -----------------------------------------------------
         // How to get my Last Choice           ?    $this->result->getLastChoiceFor($this->mySide) -- if 0 (first round)
         // How to get the opponent Last Choice ?    $this->result->getLastChoiceFor($this->opponentSide) -- if 0 (first round)
