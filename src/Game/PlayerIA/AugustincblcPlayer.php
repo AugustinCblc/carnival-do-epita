@@ -22,7 +22,7 @@ class AugustincblcPlayer extends Player
         $score = $this->result->getLastScoreFor($this->mySide);
 
         // -------------------------------------    -----------------------------------------------------
-        // If I win, I keep my last choice
+        // If I win, I keep my last choice because I think opponent is waiting for me to change.
         // -------------------------------------    -----------------------------------------------------
         if ($score > 1)
         {
@@ -30,7 +30,8 @@ class AugustincblcPlayer extends Player
         }
 
         // -------------------------------------    -----------------------------------------------------
-        // If I loose, I choose the solution with which I should have won
+        // If I loose, I choose the solution with which I should have won because if opponent think like me, he should
+        // keep his last choice.
         // -------------------------------------    -----------------------------------------------------
         if ($opplast == $this->rockChoice())
             return parent::paperChoice();
